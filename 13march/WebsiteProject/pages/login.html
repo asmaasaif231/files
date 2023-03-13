@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Sign in</title>
+    
+    
+     <!-- link css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- linked CSS -->
+    <link rel="stylesheet" href="../styles/signup.css">
+  
+
+
+
+
+
+</head>
+    <!-- Navigation Section -->
+<header>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand"><span>learning & Development</span> Hub</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html" class="smoothScroll">Home</a></li>
+                    <li><a href="/pages/login.html" class="smoothScroll">Login</a></li>
+                 
+                   <hr>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+</header>
+
+<body >
+     <!-- Section -->
+
+     <section id="skills">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+<!-- ------------------------------------------------------------------------------------- -->
+
+   <!-- registation form -->
+   <div class="container">
+
+    <form class="well form-horizontal" action="" method="" name="SignupForm" >
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h3><b>Sign in</b></h3></center></legend><br>
+
+
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="user_name" placeholder="Username" class="form-control"  type="text" required minlength="8" maxlength="20">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="user_password" placeholder="Password" class="form-control"  type="password" required onkeyup="validatePassword()" minlength="8" maxlength="20">
+    </div>
+  </div>
+  <!-- error message -->
+  <br><br>
+  <div class="error" id="passwordErr">
+   
+  </div>
+   <!-- error message -->
+</div>
+
+
+  
+
+<a href="signup.html"> Doesn't have an account? sign up Now</a>
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+</div>
+    </div><!-- /.container -->
+
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+<!-- _______________________________________________________script ______________________________________ -->
+<script>
+  function validatePassword(){
+      let userPassword = document.forms["SignupForm"]["user_password"].value;
+
+      let lowerCaseCheck =/^(\S)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])[a-zA-Z0-9~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]{10,16}$/;
+    
+      if(userPassword.match(lowerCaseCheck)){
+          document.getElementById("passwordErr").innerText="";
+      } else {
+          document.getElementById("passwordErr").innerText="password must contain lowercase,uppercase & symbols";
+      }
+      
+  }
+
+  function confirmePassword(){
+     let userPassword = document.forms["SignupForm"]["user_password"].value;
+      let confirmPassword = document.forms["SignupForm"]["confirm_password"].value;
+  
+
+      if(userPassword != confirmPassword){
+          document.getElementById("ConfirmPasswordErr").innerText="Password did not match! Please try again";
+      } else {
+          document.getElementById("ConfirmPasswordErr").innerText="";
+      }
+      
+  }
+
+
+
+</script>
+<!-- _______________________________________________________script ______________________________________ -->
+
+    </body>
+<!-- Footer Section -->
+
+<footer>
+<div class="container">
+<div class="row">
+
+<div class="col-md-8 col-sm-6">
+    <div class="wow fadeInUp footer-copyright" data-wow-delay="0.4s">
+        <p>
+            Copyright &copy; 2023 Learning & Development Hub
+            <span>||</span>
+            Developed by: Asmaa Alzahmi</a>
+        </p>
+
+        
+    </div>
+</div>
+
+
+<div class="col-md-4 col-sm-6">
+    <ul class="social-icon">
+      <li><a href="https://www.youtube.com/" class="bi bi-youtube"></a>  |  </li>
+        
+        <li><a href="https://www.linkedin.com/" class="bi bi-linkedin"></a>  |  </li>
+       
+        <li><a href="https://www.facebook.com/" class="bi bi-facebook"></a>  |  </li>
+    </ul>
+   
+   
+</div>
+
+
+</div>
+</div>
+
+
+</footer>
+
+
+
+<!-- Back top -->
+
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+-->
+
+<script src="../scripts/signup.js"></script>
+
+</body>
+</html>
+
+
